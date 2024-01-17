@@ -1,5 +1,6 @@
 # Create an AWS CloudFormation YAML template to create an S3 bucket and an EC2 Instance
-AWSTemplateFormatVersion:
+AWSTemplateFormatVersion: "2010-09-09"
+Description: A template for creating a simple S3 Bucket and EC2 Instance
 Resources:
 # S3 Bucket
   Aerielsnewbucket:
