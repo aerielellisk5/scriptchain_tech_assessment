@@ -1,0 +1,29 @@
+# Create an AWS CloudFormation YAML template to create an S3 bucket and an EC2 Instance
+AWSTemplateFormatVersion:
+Resources:
+# S3 Bucket
+  Aerielsnewbucket:
+    Type: 'AWs::S3::Bucket'
+    DeletionPolicy: Delete
+# EC2 Instance
+  AerielsECtwointance:
+    Type: 'AWS::EC2::Instance'
+    Properties:
+      InstanceType: t2.micro
+      ImageID: ami-0005e0cfe09cc9050
+      SecurityGroups:
+      - !Ref AerielsSG
+# Security Group
+  AerielsSg:
+    Type: 'AWS::EC2::SecurityGroup'
+    Properties: 
+      GroupDescription: Enable http access on port 80
+      SecurityGroupIngress:
+        - IpProtocol: tcp
+          FromPort: '80'
+          ToPort: '80'
+          CidrIp: 0.0.0.0/0
+          
+
+        
+

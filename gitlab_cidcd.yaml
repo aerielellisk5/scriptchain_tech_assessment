@@ -1,0 +1,22 @@
+# # Write a sample GitLab CI/CD YAML configuration to build, test, and deploy a Node.js application.
+image: node:latest
+
+# Job's name
+build-job:
+  # What to run on the job.
+  script:
+    - npm install
+    - npm run type:check
+
+test-job:
+  script:
+    - npm install
+    - node test.js
+
+deploy-job:
+  stage: deploy
+  script: 
+    - echo "The application was deployed into production"
+    # code to deploy to production goes here
+
+
